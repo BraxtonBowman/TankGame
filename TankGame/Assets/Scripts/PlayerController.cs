@@ -11,13 +11,13 @@ public class PlayerController : MonoBehaviour
     public float xRange = 20;
     public float zRange = 8;
     private Rigidbody playerRb;
-
     public GameObject projectilePrefab;
 
     // Start is called before the first frame update
     void Start()
     {
         playerRb = GetComponent<Rigidbody>();
+        
     }
 
     // Update is called once per frame
@@ -42,7 +42,7 @@ public class PlayerController : MonoBehaviour
         //Player fires projectile when space bar is pressed
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            Instantiate(projectilePrefab, transform.position, projectilePrefab.transform.rotation);
+            Instantiate(projectilePrefab, transform.position + transform.forward, transform.rotation * Quaternion.AngleAxis(90, Vector3.right));
         }
     
     }
@@ -68,6 +68,22 @@ public class PlayerController : MonoBehaviour
         if (transform.position.z < -zRange)
         {
             transform.position = new Vector3(transform.position.x, transform.position.y, -zRange);
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("Powerup"))
+        {
+            Destroy(other.gameObject);
+        }
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Enemy"))
+        {
+            Destroy(gameObject);
         }
     }
 
