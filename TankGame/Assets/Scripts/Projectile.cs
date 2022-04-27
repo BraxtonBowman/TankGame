@@ -18,7 +18,7 @@ public class Projectile : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        projectileRb.AddForce(projectileRb.transform.up * speed);
+        projectileRb.AddForce(projectileRb.transform.forward * speed);
         destroyOutOfBounds();
     }
 

@@ -42,7 +42,7 @@ public class PlayerController : MonoBehaviour
         //Player fires projectile when space bar is pressed
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            Instantiate(projectilePrefab, transform.position + transform.forward, transform.rotation * Quaternion.AngleAxis(90, Vector3.right));
+            Instantiate(projectilePrefab, transform.position + (transform.forward * 2), transform.rotation /* Quaternion.AngleAxis(90, Vector3.right)*/);
         }
     
     }
@@ -83,7 +83,7 @@ public class PlayerController : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Enemy"))
         {
-            Destroy(gameObject);
+            Debug.Log("Game Over");
         }
     }
 
