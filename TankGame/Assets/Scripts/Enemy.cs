@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    public float speed = 5.0f;
+    public float speed = 400f;
     private Rigidbody enemyRb;
     private GameObject player;
 
@@ -23,4 +23,5 @@ public class Enemy : MonoBehaviour
         enemyRb.AddForce(playerPosition * speed);
         transform.LookAt(player.transform.position);
     }
+
 }

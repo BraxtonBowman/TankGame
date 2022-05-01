@@ -5,9 +5,10 @@ using UnityEngine;
 public class Projectile : MonoBehaviour
 {
     public float speed = 40f;
-    public float xRange = 20;
-    public float zRange = 8;
+    private float xRange = 30;
+    private float zRange = 20;
     private Rigidbody projectileRb;
+    public ParticleSystem impactParticle;
 
     // Start is called before the first frame update
     void Start()
@@ -37,9 +38,8 @@ public class Projectile : MonoBehaviour
     private void OnCollisionEnter(Collision other)
     {
         if (other.gameObject.CompareTag("Enemy") == true) {
-            Destroy(gameObject);
             Destroy(other.gameObject);
+            impactParticle.Play();
         }
     }
-
 }

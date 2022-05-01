@@ -1,23 +1,32 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class SpawnManager : MonoBehaviour
 {
 
     public GameObject[] enemies;
     public GameObject powerup;
-
-    private float xEnemyRange = 24;
-    private float zEnemyRange = 13;
+    public GameManager gameManager;
+    public TextMeshProUGUI waveText;
+    private float xEnemyRange = 25;
+    private float zEnemyRange = 20;
     private float xPowerupRange = 15.0f;
     private float zPowerupRange = 5.0f;
     public int enemyCount;
     public int powerUpCount;
-    public int waveNumber = 1;
+    public int waveNumber ;
 
     // Start is called before the first frame update
     void Start()
+    {
+        gameManager = GameObject.Find("Game Manager").GetComponent<GameManager>();
+    }
+
+    void GameStart()
     {
         SpawnEnemies(waveNumber);
     }
@@ -26,12 +35,12 @@ public class SpawnManager : MonoBehaviour
     void Update()
     {
         enemyCount = FindObjectsOfType<Enemy>().Length;
-        if (enemyCount == 0)
+        if (enemyCount == 0 && gameManager.gameIsActive)
         {
             waveNumber++;
             SpawnEnemies(waveNumber);
             
-            if (waveNumber % 2 == 0)
+            if (waveNumber % 3 == 0)
             {
                 Instantiate(powerup, GeneratePowerSpawn(), powerup.transform.rotation);
             }
@@ -76,5 +85,10 @@ public class SpawnManager : MonoBehaviour
         {
             Instantiate(enemies[randomNumber], GenerateEnemySpawnPosition() , enemies[randomNumber].gameObject.transform.rotation);
         }
+    }
+
+    public void Game()
+    {
+
     }
 }

@@ -29,7 +29,8 @@ Transform:
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 5.07, y: 0.46, z: -4.39}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 3407747269328712001}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
@@ -48,7 +49,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1892436938281742692}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -91,8 +92,92 @@ CapsuleCollider:
   m_GameObject: {fileID: 1892436938281742692}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 1
+  m_Enabled: 0
   m_Radius: 0.5
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!1001 &3407747269328591765
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1892436938281742696}
+    m_Modifications:
+    - target: {fileID: 192068, guid: 6f3d65a695e7abd46bde807842983d4a, type: 3}
+      propertyPath: m_Name
+      value: RadiationIcon
+      objectReference: {fileID: 0}
+    - target: {fileID: 192068, guid: 6f3d65a695e7abd46bde807842983d4a, type: 3}
+      propertyPath: m_TagString
+      value: Powerup
+      objectReference: {fileID: 0}
+    - target: {fileID: 420564, guid: 6f3d65a695e7abd46bde807842983d4a, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 420564, guid: 6f3d65a695e7abd46bde807842983d4a, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 420564, guid: 6f3d65a695e7abd46bde807842983d4a, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 420564, guid: 6f3d65a695e7abd46bde807842983d4a, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 420564, guid: 6f3d65a695e7abd46bde807842983d4a, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 420564, guid: 6f3d65a695e7abd46bde807842983d4a, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 420564, guid: 6f3d65a695e7abd46bde807842983d4a, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 420564, guid: 6f3d65a695e7abd46bde807842983d4a, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 420564, guid: 6f3d65a695e7abd46bde807842983d4a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 420564, guid: 6f3d65a695e7abd46bde807842983d4a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 420564, guid: 6f3d65a695e7abd46bde807842983d4a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 6f3d65a695e7abd46bde807842983d4a, type: 3}
+--- !u!1 &3407747269328483793 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 192068, guid: 6f3d65a695e7abd46bde807842983d4a, type: 3}
+  m_PrefabInstance: {fileID: 3407747269328591765}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &3407747269328712001 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 420564, guid: 6f3d65a695e7abd46bde807842983d4a, type: 3}
+  m_PrefabInstance: {fileID: 3407747269328591765}
+  m_PrefabAsset: {fileID: 0}
+--- !u!135 &6488821525212271970
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3407747269328483793}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5075066
+  m_Center: {x: 0, y: -0.015345678, z: 3.9693552e-18}
